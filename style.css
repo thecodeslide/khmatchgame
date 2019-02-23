@@ -1,0 +1,250 @@
+@font-face {
+  font-family: kh-font;
+  src: url("Kingdom_Hearts_Font.ttf");
+}
+
+@font-face {
+  font-family: kh-menu-font;
+  src: url("KH2-menu-font.ttf");
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background-image: url("http://genchi.info/images/kingdom-hearts-wallpaper-8.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  cursor: url("http://www.rw-designer.com/cursor-view/48867.png"), default;
+  user-select: none;
+  overflow: hidden;
+}
+
+.bgmusicicon {
+  background-image: url("bgMusicIcon.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+}
+
+#endGame {
+  font-family: kh-menu-font;
+  font-size: 2rem;
+  position: absolute;
+  visibility: hidden;
+  z-index: 3;
+  height: 300px;
+  width: 75vw;
+  left: calc(50% - 75vw / 2);
+  top: 30vh;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  border-radius: 10px;
+}
+
+.playAgain {
+  margin-top: 50px;
+  font-family: kh-font;
+  font-size: 5rem;
+}
+
+.playAgain:hover {
+  color: red;
+}
+
+.title {
+  font-family: kh-font;
+  font-size: 3.5rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  color: #000000;
+  text-shadow: 0px 0px 5px white;
+  height: 100px;
+  background-image: url("https://preview.redd.it/ufhz2hg3oo521.png?width=960&crop=smart&auto=webp&s=24545315bfdc00d75850ce129c059085daa301ce");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  font-family: kh-menu-font;
+  font-size: 1rem;
+  background-color: rgba(0, 0, 0, .5);
+  color: white;
+  height: 25px;
+  width: 100%;
+}
+
+.resetButton {
+  cursor: pointer;
+}
+
+#resetButton:active {
+  color: red;
+  text-decoration: underline;
+}
+
+/* entire container, keeps perspective */
+.flip-container {
+  perspective: 1000px;
+  margin: 10px 30% 10px 30%;
+}
+
+/* flip the pane when hovered */
+.flip-container.hover .flipper {
+  transform: rotateY(180deg);
+}
+
+.flip-container.match .flipper {
+  transform: rotateY(180deg);
+  pointer-events: none;
+}
+
+.flip-container, .front, .back {
+  width: 101px;
+  height: 175px;
+  border-radius: 10px;
+}
+
+/* flip speed goes here */
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+  background-image: url("https://res.cloudinary.com/teepublic/image/private/s--nCEoXgpl--/t_Preview/b_rgb:191919,c_lpad,f_jpg,h_630,q_90,w_1200/v1481282513/production/designs/926710_1.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-color: #191919;
+  z-index: 2;
+  /* for firefox 31 */
+  transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+  transform: rotateY(180deg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-color: #191919;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 200px);
+  justify-content: center;
+  align-items: center;
+  width: 70vw;
+  height: calc(100vh - 125px);
+  margin-left: calc(70vw / 5);
+}
+
+@media screen and (max-width: 1400px) {
+  #endGame {
+    font-size: 1.4rem;
+  }
+
+  .title {
+    font-size: 2.7rem;
+    height: 75px;
+  }
+
+  .header {
+    justify-content: space-around;
+    font-size: 0.7rem;
+    height: 20px;
+    width: 100%;
+  }
+
+  .bgmusicicon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .container {
+    width: 100vw;
+    margin-left: 0px;
+    height: calc(100vh - 95px);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 175px);
+  }
+
+  .flip-container {
+    margin-top: 0px;
+  }
+
+  .flip-container, .front, .back {
+    width: 72px;
+    height: 125px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #endGame {
+    font-size: 1rem;
+  }
+
+  .title {
+    font-size: 1.7rem;
+    height: 50px;
+  }
+
+  .header {
+    justify-content: space-around;
+    font-size: 0.7rem;
+    height: 20px;
+    width: 100%;
+  }
+
+  .bgmusicicon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .container {
+    width: 100vw;
+    margin-left: 0px;
+    height: calc(100vh - 70px);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 150px);
+  }
+
+  .flip-container {
+    margin-top: 0px;
+  }
+
+  .flip-container, .front, .back {
+    width: 49px;
+    height: 85px;
+  }
+}
