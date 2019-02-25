@@ -34,6 +34,13 @@ body {
   position: absolute;
 }
 
+#credit {
+  color: rgba(255, 255, 255, 0.3);
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
 #endGame {
   font-family: kh-menu-font;
   font-size: 2rem;
