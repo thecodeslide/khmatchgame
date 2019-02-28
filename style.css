@@ -109,8 +109,10 @@ body {
 
 /* entire container, keeps perspective */
 .flip-container {
-  perspective: 1000px;
-  margin: 10px 30% 10px 30%;
+  /*perspective: 1000px;*/
+  /*margin: 10px 30% 10px 30%;*/
+    /*margin: 0 auto;*/
+    margin-top: 10px;
 }
 
 /* flip the pane when hovered */
@@ -125,7 +127,7 @@ body {
 
 .flip-container, .front, .back {
   width: 101px;
-  height: 175px;
+  height: 120px;
   border-radius: 10px;
 }
 
@@ -167,13 +169,14 @@ body {
 
 .container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 200px);
+  grid-template-columns: repeat(4, 10%);
+  grid-template-rows: repeat(4, 25%);
   justify-content: center;
   align-items: center;
-  width: 70vw;
-  height: calc(100vh - 125px);
-  margin-left: calc(70vw / 5);
+  grid-gap: 10px;
+  /*width: 70vw;*/
+  /*height: calc(100vh - 125px);*/
+  /*margin-left: calc(70vw / 5);*/
 }
 
 @media screen and (max-width: 1400px) {
@@ -199,20 +202,25 @@ body {
   }
 
   .container {
-    width: 100vw;
-    margin-left: 0px;
-    height: calc(100vh - 95px);
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 175px);
+    display: grid;
+    /*width: 100vw;*/
+    /*margin-left: 0px;*/
+    /*height: calc(100vh - 95px);*/
+    grid-template-columns: repeat(4, 12%);
+    grid-template-rows: repeat(4, minmax(20%, 1fr));
+    grid-gap: 10px;
+    justify-content: center;
+    align-items: center;
   }
 
   .flip-container {
-    margin-top: 0px;
+    margin-top: 10px;
+    /*margin: 0 auto;*/
   }
 
   .flip-container, .front, .back {
     width: 72px;
-    height: 125px;
+    height: 91px;
   }
 }
 
@@ -239,19 +247,24 @@ body {
   }
 
   .container {
-    width: 100vw;
-    margin-left: 0px;
-    height: calc(100vh - 70px);
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 150px);
+    display: grid;
+    /*width: 70vw;*/
+    /*margin-left: 0px;*/
+    /*height: calc(100vh - 70px);*/
+    grid-template-columns: repeat(4, 17%);
+    grid-template-rows: repeat(4, minmax(100px, 1fr));
+    justify-content: center;
+    align-items: center;
+    grid-gap: 10px;
   }
 
   .flip-container {
-    margin-top: 0px;
+    margin-top: 10px;
+    /*margin: 0 auto;*/
   }
 
   .flip-container, .front, .back {
     width: 49px;
-    height: 85px;
+    height: 68px;
   }
 }
